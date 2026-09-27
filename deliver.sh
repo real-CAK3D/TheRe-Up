@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# After Ganja sets today's want ads: print The Re-Up and ring the Newsstand's bell (only when there are ads).
+# After Ganja sets today's want ads: print The Re-Up and ring The Corner Chronicle's bell (only when there are ads).
 set -u
 D="$HOME/.hermes/garden/re-up"; PY="$HOME/.hermes/hermes-agent/venv/bin/python"; T=$(TZ=America/New_York date +%F)
 F="$D/drafts/$T.json"; [ -f "$F" ] || { echo "no Re-Up draft for $T"; exit 0; }

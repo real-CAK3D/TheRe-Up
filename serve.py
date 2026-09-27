@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The Re-Up web server (Tailscale-only; mounted at /re-up/ under the Newsstand).
+"""The Re-Up web server (Tailscale-only; mounted at /re-up/ under The Corner Chronicle).
 
   GET  /api/jobs?date=YYYY-MM-DD       -> each ad's state ("want:<idx>": approved + result / done / dismissed)
   POST /api/jobs {date, kind: "want", idx, decision: approve | done | dismiss}
