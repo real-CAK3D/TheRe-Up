@@ -8,7 +8,7 @@ Uses its own copy of The Double Wide's flipbook (flipbook.py) with its own masth
 import datetime as dt, json, os, sys
 
 import flipbook as fb
-from flipbook import e, page, SEAL
+from flipbook import e, page, SEAL, back_codes
 
 fb.CSS_FILE = "re-up.css"
 ROOT, SITE = fb.ROOT, fb.SITE
@@ -37,8 +37,9 @@ def render(ed):
         '<div class="gum"><span>THE RE-UP · CLASSIFIEDS DESK</span></div>'
         '<div class="pb-body"><a class="seal" href="/" aria-label="Back to the Newsstand" title="Back to the Newsstand">%s</a><h2 class="pb-title">The Re-Up</h2>'
         '<p>Set in type by Ganja from the agents\' nightly reports.<br>Answer an ad and the result shows here and in Discord.</p>'
-        '<p class="pb-code">%s · No. %s</p><p><a href="../archive.html">Back issues ›</a> · <a href="/double-wide/">The Double Wide ›</a></p></div>')
-        % (SEAL, date, e(no)), " hardcover back"))
+        '%s<p class="pb-code">%s · No. %s</p><p><a href="../archive.html">Back issues ›</a> · <a href="/double-wide/">The Double Wide ›</a> · '
+        '<a href="/">🏠 The Newsstand</a></p></div>')
+        % (SEAL, back_codes("https://github.com/real-CAK3D/TheRe-Up", "TheRe-Up"), date, e(no)), " hardcover back"))
     return fb.book(pages, date=date, no=no, lists={"want": [{k: a.get(k) for k in KEYS} for a in ads]},
                    paper="The Re-Up", motto="What the Garden needs, when it needs it", gum="WANTED · FREE · FOR SALE · THE GARDEN",
                    price="PRICE: ONE FAVOR", delivered="SET BY GANJA", flap="The Re-Up · Classifieds from the Garden", body_class="pub-ru")

@@ -41,8 +41,8 @@ def main():
             shutil.copy2(f, dest)
     eds = issues()
     items = "".join('<li><a href="issues/%s.html">%s</a></li>' % (x, dt.date.fromisoformat(x).strftime("%A, %B %-d, %Y")) for x in eds)
-    top = ('<header class="stand-top"><a class="stand-home" href="./" aria-label="Today\'s ads">📌</a><div><h1>The Re-Up</h1>'
-           '<div class="stand-sub">%s</div></div><a class="stand-home" href="/" aria-label="The Newsstand">🏪</a></header>')
+    top = ('<header class="stand-top"><a class="stand-home ns-home" href="/" aria-label="The Newsstand" title="The Newsstand">🏠</a><a class="stand-home" href="./" aria-label="Today\'s ads">📌</a><div><h1>The Re-Up</h1>'
+           '<div class="stand-sub">%s</div></div><a class="stand-home" href="archive.html" aria-label="Back issues">🗂</a></header>')
     open(os.path.join(SITE, "archive.html"), "w").write(shell("The Re-Up — Back Issues", (top % "every want-ad page") +
         '<main class="paper"><div class="box arch"><h2>The Re-Up</h2><ul class="archive">%s</ul></div></main>' % (items or "<li>None yet.</li>")))
     if eds:
