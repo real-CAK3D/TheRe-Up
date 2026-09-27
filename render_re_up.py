@@ -37,8 +37,7 @@ def render(ed):
         '<div class="gum"><span>THE RE-UP · CLASSIFIEDS DESK</span></div>'
         '<div class="pb-body"><a class="seal" href="/" aria-label="Back to The Corner Chronicle" title="Back to The Corner Chronicle">%s</a><h2 class="pb-title">The Re-Up</h2>'
         '<p>Set in type by Ganja from the agents\' nightly reports.<br>Answer an ad and the result shows here and in Discord.</p>'
-        '%s<p class="pb-code">%s · No. %s</p><p><a href="../archive.html">Back issues ›</a> · <a href="/double-wide/">The Double Wide ›</a> · '
-        '<a href="/">🏠 The Corner Chronicle</a></p></div>')
+        '%s<p class="pb-code">%s · No. %s</p><p><a href="../archive.html">Back issues ›</a></p></div>')
         % (SEAL, back_codes("https://github.com/real-CAK3D/TheRe-Up", "TheRe-Up"), date, e(no)), " hardcover back"))
     return fb.book(pages, date=date, no=no, lists={"want": [{k: a.get(k) for k in KEYS} for a in ads]},
                    paper="The Re-Up", motto="What the Garden needs, when it needs it", gum="WANTED · FREE · FOR SALE · THE GARDEN",
