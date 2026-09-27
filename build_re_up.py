@@ -50,7 +50,7 @@ def main():
         open(os.path.join(SITE, "index.html"), "w").write(pg.replace('href="../', 'href="').replace('src="../', 'src="'))
         ads = load(os.path.join(ROOT, "drafts", eds[0] + ".json")).get("want_ads") or []
         json.dump({"paper": "The Re-Up", "date": eds[0], "title": "%d want ads — %s" % (len(ads), ads[0].get("title") if ads else "nothing wanted"),
-                   "url": "issues/%s.html" % eds[0]}, open(os.path.join(SITE, "latest.json"), "w"), ensure_ascii=False)
+                   "url": "issues/%s.html" % eds[0], "issues": eds[:10]}, open(os.path.join(SITE, "latest.json"), "w"), ensure_ascii=False)
     else:
         open(os.path.join(SITE, "index.html"), "w").write(shell("The Re-Up", (top % "what the Garden needs") +
             '<main class="paper"><div class="box"><h2>The first Re-Up is on its way</h2><p>Every morning Ganja sets the want ads from the agents\' '

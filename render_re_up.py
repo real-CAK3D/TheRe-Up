@@ -22,7 +22,7 @@ def render(ed):
     ads = [a for a in ed.get("want_ads") or [] if isinstance(a, dict)]
     front = page("The Re-Up", (
         '<div class="gum"><span>WANTED · FREE · FOR SALE · THE GARDEN</span></div>'
-        '<div class="pc-top"><div class="seal">%s</div><div class="ear">No. %s<br>%s<br><b>%s</b><br>%s</div></div>'
+        '<div class="pc-top"><a class="seal" href="/" aria-label="Back to the Newsstand" title="Back to the Newsstand">%s</a><div class="ear">No. %s<br>%s<br><b>%s</b><br>%s</div></div>'
         '<div class="flag"><div class="est">EST. 2026 · THE GARDEN · LEWISTON, ME</div><h1>The<br>Re-Up</h1><div class="motto">What the Garden needs, when it needs it</div></div>'
         '<div class="pc-band"><span>WANTED</span><span>FREE</span><span>FOR SALE</span></div>'
         '<div class="pc-teaser"><div class="kicker">%d ads today</div><b>%s</b></div><div class="pc-open">Read the ads ›</div>')
@@ -35,7 +35,7 @@ def render(ed):
         pages.append(page("Answered Ads", fu.replace("What happened to the jobs you approved", "What happened to the ads you answered")))
     pages.append(page("Back Page", (
         '<div class="gum"><span>THE RE-UP · CLASSIFIEDS DESK</span></div>'
-        '<div class="pb-body"><div class="seal">%s</div><h2 class="pb-title">The Re-Up</h2>'
+        '<div class="pb-body"><a class="seal" href="/" aria-label="Back to the Newsstand" title="Back to the Newsstand">%s</a><h2 class="pb-title">The Re-Up</h2>'
         '<p>Set in type by Ganja from the agents\' nightly reports.<br>Answer an ad and the result shows here and in Discord.</p>'
         '<p class="pb-code">%s · No. %s</p><p><a href="../archive.html">Back issues ›</a> · <a href="/double-wide/">The Double Wide ›</a></p></div>')
         % (SEAL, date, e(no)), " hardcover back"))
