@@ -15,4 +15,4 @@ Part of the Garden's papers, all read through **[The Corner Chronicle](https://g
 
 ## Running
 
-Ganja sets the ads each morning with The Double Wide; served at `/re-up/` under the Newsstand. Each project is Linux-first (`%-d` date formatting) and expects a Hermes install on the same machine.
+Ganja sets the ads each morning with The Double Wide; served at `/re-up/` under The Corner Chronicle. Each project is Linux-first (`%-d` date formatting) and expects a Hermes install on the same machine.
