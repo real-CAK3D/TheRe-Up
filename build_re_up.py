@@ -41,7 +41,7 @@ def main():
             shutil.copy2(f, dest)
     eds = issues()
     items = "".join('<li><a href="issues/%s.html">%s</a></li>' % (x, dt.date.fromisoformat(x).strftime("%A, %B %-d, %Y")) for x in eds)
-    top = ('<header class="stand-top"><a class="stand-home ns-home" href="/" aria-label="The Corner Chronicle" title="The Corner Chronicle">🏠</a><a class="stand-home" href="./" aria-label="Today\'s ads">📌</a><div><h1>The Re-Up</h1>'
+    top = ('<header class="stand-top"><a class="stand-home ns-home" href="/" aria-label="The Corner Chronicle" title="The Corner Chronicle"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="5"/><path d="M24 78h72v-22l-36-18-36 18z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/><rect x="36" y="60" width="14" height="18" fill="currentColor"/><rect x="62" y="60" width="20" height="10" fill="currentColor"/><path d="M74 38c4-8 12-8 10-16M82 36c6-6 12-4 12-12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></a><a class="stand-home" href="./" aria-label="Today\'s ads">📌</a><div><h1>The Re-Up</h1>'
            '<div class="stand-sub">%s</div></div><a class="stand-home" href="archive.html" aria-label="Back issues">🗂</a></header>')
     open(os.path.join(SITE, "archive.html"), "w").write(shell("The Re-Up — Back Issues", (top % "every want-ad page") +
         '<main class="paper"><div class="box arch"><h2>The Re-Up</h2><ul class="archive">%s</ul></div></main>' % (items or "<li>None yet.</li>")))
